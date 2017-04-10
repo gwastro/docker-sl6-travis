@@ -1,5 +1,8 @@
 FROM cern/slc6-base
 
+# https://bugzilla.redhat.com/show_bug.cgi?id=1213602#c19
+RUN touch /var/lib/rpm/*
+
 RUN yum install -y gcc gcc-c++ gcc-gfortran python-devel pcre-devel \
                    autoconf automake zlib-devel libpng-devel libjpeg-devel \
                    libsqlite3-dev sqlite-devel wget db4-devel git \
